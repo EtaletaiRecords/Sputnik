@@ -9,9 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
+    - name: Setup Swift
+      uses: fwal/setup-swift@v1.7.0
+      with:
+      # Swift version to configure
+        swift-version: 5.4 # default is 5.4
     - uses: actions/checkout@v2
     - name: Build
       run: xcodebuild
